@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  @font-face {
+    font-family: hammersmith;
+    src: url(../assets/HammersmithOne-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: holtwood;
+    src: url(../assets/HoltwoodOneSC-Regular.ttf);
+  }
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -30,4 +43,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.input {
+  border-width: 0px !important;
 }

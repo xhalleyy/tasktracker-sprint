@@ -10,10 +10,30 @@ export default function Home() {
   const [isNewAccount, setIsNewAccount] = useState<boolean>(true);
   const [visibility, setVisibility] = useState<boolean>(false);
 
+  const [id, setId] = useState<number>(0);
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [color, setColor] = useState<string | null>(null);
+
   const handleLogin = () => {
     setIsNewAccount(!isNewAccount);
   }
 
+
+  // handle signing up functionality
+  const handleSignUp = () => {
+    let userData = {
+      id: id,
+      username: username,
+      password: password,
+      color: color
+    }
+
+    let loginData = {
+      username: username,
+      password: password
+    }
+  }
   const handlePassVisibility = () => {
     setVisibility(!visibility);
   }
@@ -61,7 +81,7 @@ export default function Home() {
               null
             }
             <div className="flex justify-center mt-3">
-              <Button className="bg-[#0B7D61] font-hammersmith !border-0 text-2xl rounded-md py-1/2 px-3.5 justify-center " type="submit">CREATE</Button>
+              <Button className="bg-[#0B7D61] font-hammersmith !border-0 text-2xl rounded-md !py-[0.5px] px-3 justify-center " type="submit">CREATE</Button>
             </div>
             <p className="font-hammersmith text-center text-black">
               {isNewAccount ? 'Already have an Account? ' : "Don't have an account? "}

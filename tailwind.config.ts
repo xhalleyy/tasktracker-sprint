@@ -1,12 +1,12 @@
-import type { Config } from "tailwindcss";
-/** @type {import('tailwindcss').Config} */
+const flowbite = require("flowbite-react/tailwind");
 
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    'node_modules/flowbite-react/lib/esm/**/*.js',
+    flowbite.content(),
   ],
   theme: {
     fontFamily: {
@@ -22,7 +22,6 @@ const config: Config = {
     },
   },
   plugins: [
-    require('flowbite/plugin'),
+    flowbite.plugin(),
   ],
 };
-export default config;
